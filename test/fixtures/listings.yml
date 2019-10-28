@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  description: MyText
+  colour: one
+  make: one
+  size: one
+  condition: one
+  location: one
+  sold: 1
+
+two:
+  user: two
+  title: MyString
+  description: MyText
+  colour: two
+  make: two
+  size: two
+  condition: two
+  location: two
+  sold: 1
