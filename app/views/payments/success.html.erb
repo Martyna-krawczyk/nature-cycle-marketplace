@@ -1,0 +1,13 @@
+<%= "Thanks #{@user.email}, your payment of $#{@listing.deposit}.00 was successful!" %><br>
+<%= "Details of your purchase: #{@listing.title}" %><br>
+<%= "Suitable for: #{@listing.sex}" %><br>
+<%= "Main Colour: #{@listing.colour.colour}" %><br>
+<%= "Make: #{@listing.make.make}" %><br>
+<%= "Size: #{@listing.size.size}" %><br>
+<%= "Condition: #{@listing.condition.condition}" %><br>
+<%= "Description: #{@listing.description}" %><br>
+<%= "Purchase Price: $#{@listing.price}.00"%><br>
+<%  balance = @listing.price - @listing.deposit %>
+<%= "You owe a balance of $#{balance}.00 due on pick-up"%><br>
+<br>
+<%= link_to "Go to Listings", listings_path %>

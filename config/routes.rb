@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   get "/", to: "pages#home", as: "root"
   
   get "/listings", to: "listings#index", as: "listings"
@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   delete "/listings/:id", to: "listings#destroy"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
 
-  # get "*path", to: "pages#not_found", constraints: lambda { |req|
-  #   req.path.exclude? 'rails/active_storage'
-  # }
-  # end
-  
+
+  get "payments/success", to: "payments#success"
+  post "payments/webhook", to: "payments#webhook"
+
+  get "*path", to: "pages#not_found", constraints: lambda { |req|
+    req.path.exclude? 'rails/active_storage'
+  }
 
 end
