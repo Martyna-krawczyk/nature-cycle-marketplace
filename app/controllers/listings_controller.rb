@@ -39,7 +39,7 @@ class ListingsController < ApplicationController
   
 
   def create
-    listing_params = params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex)
+    listing_params = params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit)
     
     @listing = current_user.listings.create(listing_params)
 
@@ -84,14 +84,12 @@ class ListingsController < ApplicationController
     id = params[:id]
     @listing = current_user.listings.find_by_id( id )
 
-    # if @listing == nil
-    #     redirect_to listings_path
-    # elsif @listing.deposit == nil
-    #     @listing.deposit = 0
-    # end
+    if @listing == nil
+      redirect_to listings_path
+    end
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex)
+    params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit)
   end
 end

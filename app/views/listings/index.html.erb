@@ -10,6 +10,8 @@
       <th>Size</th>
       <th>Condition</th>
       <th>Gender</th>
+      <th>Price</th>
+      <th>Deposit</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,11 +20,13 @@
       <tr>
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
-        <td><%= listing.colour_id %></td>
-        <td><%= listing.make %></td>
-        <td><%= listing.size %></td>
-        <td><%= listing.condition %></td>
+        <td><%= listing.colour.colour %></td>
+        <td><%= listing.make.make %></td>
+        <td><%= listing.size.size %></td>
+        <td><%= listing.condition.condition %></td>
         <td><%= listing.sex %></td>
+        <td><%= listing.price %></td>
+        <td><%= listing.deposit %></td>
 
        <% if current_user.id == listing.user_id %>
        <td><%= link_to "View", listing_path( listing ) %></td>
