@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_233300) do
+ActiveRecord::Schema.define(version: 2019_10_28_052643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,23 +35,15 @@ ActiveRecord::Schema.define(version: 2019_10_27_233300) do
     t.bigint "make_id"
     t.bigint "size_id"
     t.bigint "condition_id"
-    t.bigint "location_id"
     t.integer "sold"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sex"
     t.index ["colour_id"], name: "index_listings_on_colour_id"
     t.index ["condition_id"], name: "index_listings_on_condition_id"
-    t.index ["location_id"], name: "index_listings_on_location_id"
     t.index ["make_id"], name: "index_listings_on_make_id"
     t.index ["size_id"], name: "index_listings_on_size_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.string "city"
-    t.string "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "makes", force: :cascade do |t|
@@ -88,7 +80,6 @@ ActiveRecord::Schema.define(version: 2019_10_27_233300) do
 
   add_foreign_key "listings", "colours"
   add_foreign_key "listings", "conditions"
-  add_foreign_key "listings", "locations"
   add_foreign_key "listings", "makes"
   add_foreign_key "listings", "sizes"
   add_foreign_key "listings", "users"

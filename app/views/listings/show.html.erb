@@ -1,0 +1,37 @@
+Show
+<h1>Show Listing</h1>
+
+<p>
+<strong>Title:</strong>
+<%=@listing.title%>
+</p>
+<p>
+<strong>Description:</strong>
+<%= @listing.description %>
+</p>
+<p>
+<strong>Sex:</strong>
+<%= @listing.sex %>
+</p>
+<p>
+<strong>Colour:</strong>
+<%= @listing.colour.colour %>
+</p>
+<p>
+<strong>Make:</strong>
+<%= @listing.make.make %>
+</p>
+<p>
+<strong>Size:</strong>
+<%= @listing.size.size %>
+</p>
+<p>
+<strong>Condition:</strong>
+<%= @listing.condition.condition %>
+</p>
+
+<br>
+<%= link_to 'Edit', edit_listing_path( @listing ) %>
+<%= link_to 'Back', listings_path %>
+<%= link_to 'Add New Listing', new_listing_path %>
+<%= link_to 'Home', root_path %>
