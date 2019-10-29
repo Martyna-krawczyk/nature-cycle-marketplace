@@ -6,4 +6,10 @@ class Listing < ApplicationRecord
   belongs_to :condition
   enum sex: { girls: 0, boys: 1, unisex: 2 }
   enum sold: { complete: 0, sold: 1, active: 2 }
+
+  validates :price, numericality: true
+  validates :deposit,numericality: true 
+  validates_numericality_of :deposit, :less_than_or_equal_to => :price
+
+  has_one_attached :picture
 end

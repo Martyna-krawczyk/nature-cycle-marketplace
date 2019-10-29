@@ -6,6 +6,9 @@ Show
 <%=@listing.title%>
 </p>
 <p>
+<%= image_tag @listing.picture if @listing.picture.attached?%>
+</p>
+<p>
 <strong>Description:</strong>
 <%= @listing.description %>
 </p>
@@ -29,15 +32,15 @@ Show
 <strong>Condition:</strong>
 <%= @listing.condition.condition %>
 </p>
+<p>
 <strong>Location:</strong>
 <%= @listing.location %>
 </p>
+<p>
 <strong>Price:</strong>
 <%= @listing.price %>
 </p>
-<strong>Deposit:</strong>
-<%= @listing.deposit %>
-</p>
+
 <button data-stripe="payment">
   Pay Deposit <%= number_to_currency(@listing.deposit) %>
 </button>
