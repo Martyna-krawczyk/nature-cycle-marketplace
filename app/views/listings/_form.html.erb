@@ -46,7 +46,6 @@
         <% Listing.sexes.keys.each do |s| %>
             <%= form.label s %>
             <%= form.radio_button :sex, s %>
-        
             <% if s == listing.sex %>
                 <% form.radio_button :sex, :checked => true %>
             <% end %>
@@ -55,6 +54,10 @@
         <div>
         <%= form.label :condition_id %>
         <%= form.select :condition_id, options_for_select( Condition.all.collect { |u| [u.condition, u.id] }, :selected => listing.condition_id ) %>
+    </div>
+    <div>
+        <%= form.label :location %>
+        <%= form.select :location, [ "Melbourne, VIC", "Sydney, NSW","Brisbane, QLD","Darwin, NT","Perth, WA","Canberra, ATC","Hobart, TAS" ] %>
     </div>
     <div> 
     <%= form.label :picture%>

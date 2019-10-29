@@ -39,7 +39,7 @@ class ListingsController < ApplicationController
   
 
   def create
-    listing_params = params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit)
+    listing_params = params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit, :location)
     
     @listing = current_user.listings.create(listing_params)
 
@@ -92,6 +92,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit)
+    params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit, :location)
   end
 end

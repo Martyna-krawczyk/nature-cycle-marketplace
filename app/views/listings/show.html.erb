@@ -29,6 +29,9 @@ Show
 <strong>Condition:</strong>
 <%= @listing.condition.condition %>
 </p>
+<strong>Location:</strong>
+<%= @listing.location %>
+</p>
 <strong>Price:</strong>
 <%= @listing.price %>
 </p>
@@ -56,6 +59,6 @@ Show
 </script>
 <br>
 <%= link_to 'Edit', edit_listing_path( @listing ) %>
-<%= link_to 'Back', listings_path %>
+<%= link_to 'Back to Listings', listings_path %>
 <%= link_to 'Add New Listing', new_listing_path %>
 <%= link_to 'Home', root_path %>
