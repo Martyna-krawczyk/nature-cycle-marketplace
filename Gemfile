@@ -67,5 +67,6 @@ gem "stripe", "~> 5.7"
 
 gem "aws-sdk-s3", "~> 1.52"
 
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin'
+
+gem 'inherited_resources'

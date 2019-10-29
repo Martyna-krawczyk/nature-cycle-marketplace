@@ -6,7 +6,7 @@ Show
 <%=@listing.title%>
 </p>
 <p>
-<%= image_tag @listing.picture if @listing.picture.attached?%>
+<%= image_tag @listing.picture, class: 'thumbnails' if @listing.picture.attached?%>
 </p>
 <p>
 <strong>Description:</strong>
