@@ -5,6 +5,10 @@ class PaymentsController < ApplicationController
   def success
     @listing = Listing.find(params[:listingId])
     @user = User.find(params[:userId])
+    
+    enum_change = Listing.find(params[:listingId])
+    enum_change.update(sold: 'sold')
+    enum_change.save
   end
 
   def webhook

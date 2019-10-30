@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_listing, only: [:show]
   before_action :set_user_listing, only: [:edit, :update, :destroy]
-
+  load_and_authorize_resource
   def index
       @listings = Listing.all
       # @listings = current_user.listings - this will only show the listings for the current user.
@@ -54,7 +54,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
-     
+    
   end
 
   def update

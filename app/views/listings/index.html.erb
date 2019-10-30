@@ -19,7 +19,9 @@
     </tr>
   </thead>
   <tbody>
+    
     <% @listings.each do | listing | %>
+    <% if listing.sold == "active"%>
       <tr>
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
@@ -40,6 +42,7 @@
         <td><%= link_to 'Destroy', listing_path( listing ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
         <% end %>
       </tr>
+      <%end%>
       <%end%>
   </tbody>
 </table>

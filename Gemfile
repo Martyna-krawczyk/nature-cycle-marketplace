@@ -67,3 +67,4 @@ gem "stripe", "~> 5.7"
 
 gem "aws-sdk-s3", "~> 1.52"
 
+gem 'cancancan'

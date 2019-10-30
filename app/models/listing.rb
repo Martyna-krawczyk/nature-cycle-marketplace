@@ -5,7 +5,7 @@ class Listing < ApplicationRecord
   belongs_to :size
   belongs_to :condition
   enum sex: { girls: 0, boys: 1, unisex: 2 }
-  enum sold: { complete: 0, sold: 1, active: 2 }
+  enum sold: { sold: 1, active: 2 }
 
   validates :price, numericality: true
   validates :deposit,numericality: true 
