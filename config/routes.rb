@@ -25,6 +25,15 @@ Rails.application.routes.draw do
   delete "/makes/:id", to: "makes#destroy"
   get "/makes/:id/edit", to: "makes#edit", as: "edit_make"
 
+  get "/colours", to: "colours#index", as: "colours"
+  post "/colours", to: "colours#create"
+  get "/colours/new", to: "colours#new", as: "new_colour"
+  get "/colours/:id", to: "colours#show", as: "colour"
+  put "/colours/:id", to: "colours#update"
+  patch "/colours/:id", to: "colours#update"
+  delete "/colours/:id", to: "colours#destroy"
+  get "/colours/:id/edit", to: "colours#edit", as: "edit_colour"
+
   get "*path", to: "pages#not_found", constraints: lambda { |req|
     req.path.exclude? 'rails/active_storage'
   }

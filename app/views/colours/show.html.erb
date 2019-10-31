@@ -1,0 +1,11 @@
+
+<h1>Show Colour</h1>
+
+<p>
+<strong>Colour:</strong>
+<%=@colour.colour%>
+</p>
+
+<td><%= link_to 'View All', colours_path( @colour )%></td>
+<td><%= link_to 'Edit', edit_colour_path( @colour )%></td>
+<td><%= link_to 'Destroy', colour_path( @colour ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>

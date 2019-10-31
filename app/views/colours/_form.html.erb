@@ -1,0 +1,22 @@
+<%= form_with(model: colour, local: true) do |form| %>
+
+<% if @colour.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@colour.errors.count, "Error") %> prohibited this form from being saved:</h2>
+ 
+    <ul>
+    <% @colour.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+
+    <div>
+        <%= form.label :colour %>
+        <%= form.text_field :colour, :required => true, :autofocus => true, :placeholder => "Which colour would you like to add?"%>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
