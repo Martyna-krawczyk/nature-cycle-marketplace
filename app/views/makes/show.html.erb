@@ -6,8 +6,7 @@
 <%=@make.make%>
 </p>
 
-<br>
-<%= link_to 'Edit', edit_listing_path( @listing ) %>
-<%= link_to 'Back to Listings', listings_path %>
-<%= link_to 'Add New Listing', new_listing_path %>
-<%= link_to 'Home', root_path %>
+<td><%= link_to 'Edit', edit_make_path( @make )%></td>
+<td><%= link_to 'Destroy', make_path( @make ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
+ 
+

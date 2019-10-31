@@ -5,7 +5,7 @@
     <h2><%= pluralize(@make.errors.count, "Error") %> prohibited this form from being saved:</h2>
  
     <ul>
-    <% @listing.errors.full_messages.each do |msg| %>
+    <% @make.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
@@ -14,7 +14,7 @@
 
     <div>
         <%= form.label :make %>
-        <%= form.text_field :title, :required => true, :autofocus => true, :placeholder => "Which make would you like to add?"%>
+        <%= form.text_field :make, :required => true, :autofocus => true, :placeholder => "Which make would you like to add?"%>
     </div>
     <div>
         <%= form.submit %>
