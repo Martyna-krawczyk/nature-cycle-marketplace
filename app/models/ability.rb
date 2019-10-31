@@ -13,6 +13,10 @@ class Ability
       if user.admin?  # additional permissions for administrators
         can :crud, Listing
         can :crud, User
+        can :crud, Make
+        can :crud, Condition
+        can :crud, Colour
+        can :crud, Size
       end
     end
     # Define abilities for the passed in user here. For example:

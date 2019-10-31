@@ -1,9 +1,8 @@
-class ListingsController < ApplicationController
-  before_action :authenticate_user!, only:[ :show]
-  before_action :set_listing, only: [:show,:edit, :update, :destroy]
-  # before_action :set_user_listing, only: [:edit, :update, :destroy]
-  skip_authorize_resource :only => :show
-
+class MakesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_listing, only: [:show]
+  before_action :set_user_listing, only: [:edit, :update, :destroy]
+  load_and_authorize_resource
   def index
       @listings = Listing.all
       # @listings = current_user.listings - this will only show the listings for the current user.
@@ -30,8 +29,6 @@ class ListingsController < ApplicationController
     )
 
     @session_id = session.id
-
-
   end
 
   def new
@@ -57,7 +54,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    authorize! :edit, @listing
+    
   end
 
   def update
@@ -74,9 +71,7 @@ class ListingsController < ApplicationController
       redirect_to listings_path
   end
 
-  def public
-    byebug
-  end
+  
 
   private
 
@@ -99,6 +94,4 @@ class ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(:title, :description, :colour_id, :make_id, :size_id, :condition_id, :sold, :picture, :sex, :price, :deposit, :location)
   end
-
-
 end
