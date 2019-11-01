@@ -34,6 +34,15 @@ Rails.application.routes.draw do
   delete "/colours/:id", to: "colours#destroy"
   get "/colours/:id/edit", to: "colours#edit", as: "edit_colour"
 
+  get "/conditions", to: "conditions#index", as: "conditions"
+  post "/conditions", to: "conditions#create"
+  get "/conditions/new", to: "conditions#new", as: "new_condition"
+  get "/conditions/:id", to: "conditions#show", as: "condition"
+  put "/conditions/:id", to: "conditions#update"
+  patch "/conditions/:id", to: "conditions#update"
+  delete "/conditions/:id", to: "conditions#destroy"
+  get "/conditions/:id/edit", to: "conditions#edit", as: "edit_condition"
+
   get "*path", to: "pages#not_found", constraints: lambda { |req|
     req.path.exclude? 'rails/active_storage'
   }
