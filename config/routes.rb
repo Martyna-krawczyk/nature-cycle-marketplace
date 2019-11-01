@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-
-  get "/", to: "pages#home", as: "root"
+  root 'dashboard#index'
+  get "/home", to: "pages#home", as: "home"
   
   get "/listings", to: "listings#index", as: "listings"
   post "/listings", to: "listings#create"
@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   patch "/listings/:id", to: "listings#update"
   delete "/listings/:id", to: "listings#destroy"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
-
 
   get "payments/success", to: "payments#success"
   post "payments/webhook", to: "payments#webhook"
@@ -51,6 +50,8 @@ Rails.application.routes.draw do
   patch "/sizes/:id", to: "sizes#update"
   delete "/sizes/:id", to: "sizes#destroy"
   get "/sizes/:id/edit", to: "sizes#edit", as: "edit_size"
+
+ 
 
   get "*path", to: "pages#not_found", constraints: lambda { |req|
     req.path.exclude? 'rails/active_storage'
