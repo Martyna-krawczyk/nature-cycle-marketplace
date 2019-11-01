@@ -43,6 +43,15 @@ Rails.application.routes.draw do
   delete "/conditions/:id", to: "conditions#destroy"
   get "/conditions/:id/edit", to: "conditions#edit", as: "edit_condition"
 
+  get "/sizes", to: "sizes#index", as: "sizes"
+  post "/sizes", to: "sizes#create"
+  get "/sizes/new", to: "sizes#new", as: "new_size"
+  get "/sizes/:id", to: "sizes#show", as: "size"
+  put "/sizes/:id", to: "sizes#update"
+  patch "/sizes/:id", to: "sizes#update"
+  delete "/sizes/:id", to: "sizes#destroy"
+  get "/sizes/:id/edit", to: "sizes#edit", as: "edit_size"
+
   get "*path", to: "pages#not_found", constraints: lambda { |req|
     req.path.exclude? 'rails/active_storage'
   }

@@ -1,0 +1,23 @@
+<h1>Sizes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sizes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sizes.each do |size| %>
+    <tr>
+      <td><%= size.size %></td>
+      
+      <td><%= link_to 'Edit', edit_size_path( size )%></td>
+      <td><%= link_to 'Destroy', size_path( size ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Add New Size', new_size_path %>
+<%= link_to 'Home', root_path %>

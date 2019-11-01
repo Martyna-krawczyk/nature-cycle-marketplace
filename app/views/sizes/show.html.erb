@@ -1,0 +1,11 @@
+
+<h1>Show Size</h1>
+
+<p>
+<strong>Sizes:</strong>
+<%=@size.size%>
+</p>
+
+<td><%= link_to 'View All', sizes_path( @size )%></td>
+<td><%= link_to 'Edit', edit_size_path( @size )%></td>
+<td><%= link_to 'Destroy', size_path( @size ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>

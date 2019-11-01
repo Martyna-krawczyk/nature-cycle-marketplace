@@ -8,11 +8,10 @@
     </tr>
   </thead>
   <tbody>
+    <% @makes.each do |make| %>
     <tr>
-      <% @makes.each do |make| %>
       <td><%= make.make %></td>
 
-      
       <td><%= link_to 'Edit', edit_make_path( make )%></td>
       <td><%= link_to 'Destroy', make_path( make ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
       <% end %>
