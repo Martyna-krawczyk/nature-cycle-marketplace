@@ -1,0 +1,11 @@
+Here's the admin dashboard view
+<%=  render 'all_listings' %> 
+
+<% if current_user %>
+        <% if current_user.admin? %>
+         <td><%= link_to 'View Makes', makes_path %></td>
+         <td><%= link_to 'View Colours', colours_path%></td>
+         <td><%= link_to 'View Conditions', conditions_path%></td>
+         <td><%= link_to 'View Sizes', sizes_path%></td>
+        <% end %>
+        <% end %>

@@ -1,0 +1,59 @@
+
+<h1>Manage Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Colour</th>
+      <th>Make</th>
+      <th>Size</th>
+      <th>Condition</th>
+      <th>Gender</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th>Deposit</th>
+      <th>Picture</th>
+      <th>Active/Sold</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @listings = Listing.all %>
+    <% @listings.each do | listing | %>
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.colour.colour %></td>
+        <td><%= listing.make.make %></td>
+        <td><%= listing.size.size %></td>
+        <td><%= listing.condition.condition %></td>
+        <td><%= listing.sex %></td>
+        <td><%= listing.location %></td>
+        <td><%= listing.price %></td>
+        <td><%= listing.deposit %></td>
+        <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
+        <td><%= listing.sold %></td>
+
+
+
+        <td><%= link_to "View", listing_path( listing ) %></td>
+         <td><%= link_to 'Edit', edit_listing_path( listing )%></td>
+         <td><%= link_to 'Destroy', listing_path( listing ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
+      </tr>
+      <%end%>
+  </tbody>
+</table>
+<br>
+
+
+<% if current_user %>
+        <% if current_user.admin? %>
+         <td><%= link_to 'View Makes', makes_path %></td>
+         <td><%= link_to 'View Colours', colours_path%></td>
+         <td><%= link_to 'View Conditions', conditions_path%></td>
+         <td><%= link_to 'View Sizes', sizes_path%></td>
+        <% end %>
+        <% end %>

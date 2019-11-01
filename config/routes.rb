@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'dashboard#index'
-  get "/home", to: "pages#home", as: "home"
   
+  get "/", to: "pages#home", as: "root"
+  
+  get "/admin", to: "pages#admin", as: "admin"
+  get "/user", to: "pages#user", as: "user"
+
   get "/listings", to: "listings#index", as: "listings"
   post "/listings", to: "listings#create"
   get "/listings/new", to: "listings#new", as: "new_listing"
@@ -11,6 +14,7 @@ Rails.application.routes.draw do
   patch "/listings/:id", to: "listings#update"
   delete "/listings/:id", to: "listings#destroy"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
+
 
   get "payments/success", to: "payments#success"
   post "payments/webhook", to: "payments#webhook"

@@ -6,6 +6,7 @@ class Ability
   def initialize(user)
     alias_action :create, :read, :update, :destroy, to: :crud
     can :read, Listing, public: true
+  
 
     if user.present?  # additional permissions for logged in users (they can crud their own posts)
       can :crud, Listing, user_id: user.id

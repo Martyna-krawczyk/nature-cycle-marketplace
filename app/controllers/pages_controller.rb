@@ -1,7 +1,16 @@
 class PagesController < ApplicationController
-
+  
   def home
     
-  end  
+  end 
 
+  def admin
+    
+  end 
+
+  def user
+    
+  end 
+  
 end
+
