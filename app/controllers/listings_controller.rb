@@ -1,12 +1,11 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!, only:[ :show]
+  before_action :authenticate_user!, only:[ :show, :new] #this ensures that a visitor must login before they can view a listing, or create one
   before_action :set_listing, only: [:show,:edit, :update, :destroy]
   # before_action :set_user_listing, only: [:edit, :update, :destroy]
   skip_authorize_resource :only => :show
 
   def index
       @listings = Listing.all
-      # @listings = current_user.listings - this will only show the listings for the current user.
   end
 
   def show
@@ -75,7 +74,7 @@ class ListingsController < ApplicationController
   end
 
   def public
-    byebug
+    
   end
 
   private
