@@ -40,11 +40,11 @@ end
 
 # Creates 6 sizes for Sizes table - measured as child's height
 size_list = [
-  ['85cm to 100cm']
-  ['95cm to 110cm']
-  ['110cm to 120cm']
-  ['120cm to 135cm']
-  ['135cm to 145cm']
+  ['85cm to 100cm'],
+  ['95cm to 110cm'],
+  ['110cm to 120cm'],
+  ['120cm to 135cm'],
+  ['135cm to 145cm'],
   ['135cm to 145cm']
 ]
 size_list.each do |size|
@@ -55,13 +55,13 @@ end
 
 # Creates 8 makes for Makes table
 makes_list = [
-  ['Giant']
-  ['Mongoose']
-  ['Liv']
-  ['Goldcross']
-  ['Polygon']
-  ['Fluid']
-  ['Huffy']
+  ['Giant'],
+  ['Mongoose'],
+  ['Liv'],
+  ['Goldcross'],
+  ['Polygon'],
+  ['Fluid'],
+  ['Huffy'],
   ['Royal Baby']
 ]
 makes_list.each do |make|
@@ -72,11 +72,11 @@ end
 
 # Creates 6 conditions for Conditions table
 conditions_list = [
-  ['New']
-  ['As-New']
-  ['Excellent']
-  ['Good']
-  ['Poor']
+  ['New'],
+  ['As-New'],
+  ['Excellent'],
+  ['Good'],
+  ['Poor'],
   ['Suitable for parts only']
 ]
 conditions_list.each do |condition|
