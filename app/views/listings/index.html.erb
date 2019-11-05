@@ -40,7 +40,7 @@
 
         
         <% if current_user %>
-        <% if current_user.admin? || current_user.id == listing.user_id %>
+        <% if current_user.admin? || current_user.id == listing.user_id %> 
          <td><%= link_to 'Manage Listing', user_path %></td>
          <% else %>
          <td><%= link_to "View", listing_path( listing ) %></td>

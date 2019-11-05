@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
     @listing = Listing.find(params[:listingId])
     @user = User.find(params[:userId])
     
+    #This function will update the enum on the listing once a deposit is successfully made, so that only active listings are showing in index page.
     enum_change = Listing.find(params[:listingId])
     enum_change.update(sold: 'sold')
     enum_change.save
