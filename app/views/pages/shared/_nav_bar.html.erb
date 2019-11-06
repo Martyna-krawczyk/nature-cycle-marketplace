@@ -1,28 +1,39 @@
-<nav>
-  <div class="navbar-links">
-    <%= link_to "ABOUT", about_path, class: "navbar-link" %>
-    <%= link_to "PORTFOLIO", portfolio_path, class: "navbar-link" %>
-    <%= link_to "CONTACT", contact_path, class: "navbar-link" %>
-    <%= link_to "BLOG", blog_path, class: "navbar-link" %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Natu[re]Cycle</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      <div class="navbar-nav w-100">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'View Listings', listings_path(@listing), class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sell a Bike', new_listing_path, class:"nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+    <%= link_to 'Edit profile', edit_user_registration_path, class:"nav-link" %>
+    </li>
+    <li class="nav-item">
+    <%= link_to "Logout", destroy_user_session_path, class:"nav-link", method: :delete %>
+    </li>
+    <% else %>
+    <li class="nav-item">
+    <%= link_to "Login", new_user_session_path, class:"nav-link" %>
+    </li>
+    <li class="nav-item">
+    <%= link_to "Sign up", new_user_registration_path, class:"nav-link"  %>
+    </li>
+    <% end %>
+    </li>
+    </ul>
+    </div>
   </div>
 </nav>
-<div class="navbar">
-  <div class="navbar-logo">
-  <%=link_to root_path do%>
-  <%= image_tag 'MK.png', alt:'logo image' %>
-  <% end %>
-  </div>
-  <div id="button">
-    <label>
-      <input type="checkbox" value="1"><span class="fas fa-bars ham"></span>
-      <div class="menu"> 
-        <ul>
-          <%=link_to "ABOUT", about_path, class: "navbar-link" %>
-          <%=link_to "PORTFOLIO", portfolio_path, class: "navbar-link" %>
-          <%=link_to "CONTACT", contact_path, class: "navbar-link" %>
-          <%=link_to "BLOG", blog_path, class: "navbar-link" %>
-        </ul>
-      </div>
-    </label>
-  </div>
-</div>
+

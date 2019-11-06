@@ -1,7 +1,4 @@
-
-<h1>Manage Your Listings</h1>
-
-<table>
+<table class="container">
   <thead>
     <tr>
       <th>Title</th>
@@ -50,14 +47,4 @@
       <% end %>
   </tbody>
 </table>
-<br>
 
-
-<% if current_user %>
-        <% if current_user.admin? %>
-         <td><%= link_to 'View Makes', makes_path %></td>
-         <td><%= link_to 'View Colours', colours_path%></td>
-         <td><%= link_to 'View Conditions', conditions_path%></td>
-         <td><%= link_to 'View Sizes', sizes_path%></td>
-        <% end %>
-        <% end %>

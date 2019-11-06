@@ -1,58 +1,32 @@
-<h1>Listings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Colour</th>
-      <th>Make</th>
-      <th>Size</th>
-      <th>Condition</th>
-      <th>Gender</th>
-      <th>Location</th>
-      <th>Price</th>
-      <th>Deposit</th>
-      <th>Picture</th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <% @listings.each do | listing | %>
-    <% if listing.sold == "active"%>
-      <tr>
-        <td><%= listing.title %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.colour.colour %></td>
-        <td><%= listing.make.make %></td>
-        <td><%= listing.size.size %></td>
-        <td><%= listing.condition.condition %></td>
-        <td><%= listing.sex %></td>
-        <td><%= listing.location %></td>
-        <td><%= listing.price %></td>
-        <td><%= listing.deposit %></td>
-        <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
-
-
-
-
-        <td><%= link_to "View", listing_path( listing ) %></td>
-        <% if current_user %>
-        <% if current_user.admin? || current_user.id == listing.user_id %> 
-         <td><%= link_to 'Manage Listing', user_path %></td>
-         <% else %>
-         
+<div class = "row one">
+ <h2>Bikes Listed</h2>
+</div>
+  <div class="container">
+    <div class="row">
+      <% @listings.each do |listing|%>
+        <% if listing.sold == "active"%>
+          <div class="card" style="width: 20rem; height: 35rem;">
+          <%= image_tag listing.picture, class:"card-img-top", alt:"Card image cap" if listing.picture.attached? %>
+          <div class="card-body diffbg">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <p><%= listing.location %></p>
+            <p>Bike Type: <%= listing.sex %></p>
+            <p class="card-text"><%= listing.description%></p>
+            <h5><%= number_to_currency(listing.price) %></h5>
+          </div>
+        <div class="card-footer">
+        <%= link_to 'View Details', listing_path(listing), class:"btn btn-outline-dark" %>
+          <% if current_user %>
+            <% if current_user.id == listing.user_id %> 
+              <%= link_to 'Manage Listing', user_path, class:"btn btn-outline-dark" %>
+            <% end %>
+          <% end %>
+        </div>
+        </div>
         <% end %>
-        <% end %>
-      </tr>
-      <%end%>
-      <%end%>
-  </tbody>
-</table>
-<br>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Listings', listings_path %>
-<%= link_to 'Add New Listing', new_listing_path %>
-<%= link_to 'Home', root_path %>

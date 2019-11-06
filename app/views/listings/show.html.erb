@@ -62,7 +62,6 @@ Show
 </script>
 <br>
 
-<td><%= link_to "View", listing_path( @listing ) %></td>
   <% if current_user %>
 
   <% if current_user.admin? %>
@@ -71,8 +70,3 @@ Show
   <% end %>
   <% end %>
 
-
-<%= link_to 'Edit', edit_listing_path( @listing ) %>
-<%= link_to 'Back to Listings', listings_path %>
-<%= link_to 'Add New Listing', new_listing_path %>
-<%= link_to 'Home', root_path %>

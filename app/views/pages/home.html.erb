@@ -1,60 +1,28 @@
-Home
-<li>
-<% @listings = Listing.all %>
-<% @listings.last(3).each do | listing | %>
-    <% if listing.sold == "active"%>
-
-      <tr>
-        <td><%= listing.title %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.colour.colour %></td>
-        <td><%= listing.make.make %></td>
-        <td><%= listing.size.size %></td>
-        <td><%= listing.condition.condition %></td>
-        <td><%= listing.sex %></td>
-        <td><%= listing.location %></td>
-        <td><%= listing.price %></td>
-        <td><%= listing.deposit %></td>
-        <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
 
 
-
-
-        <td><%= link_to "View", listing_path( listing ) %></td>
-        <% if current_user %>
-        <% if current_user.admin? || current_user.id == listing.user_id %> 
-         <td><%= link_to 'Manage Listing', user_path %></td>
-         <% else %>
-         
+<div class = "row one">
+ <h2>Bikes Recently Listed</h2>
+</div>
+  <div class="container">
+    <div class="row">
+      <% @recent.each do |listing|%>
+        <% if listing.sold == "active"%>
+          <div class="card" style="width: 20rem; height: 35rem;">
+          <%= image_tag listing.picture, class:"card-img-top", alt:"Card image cap" if listing.picture.attached? %>
+          <div class="card-body diffbg">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <p><%= listing.location %></p>
+            <p>Bike Type: <%= listing.sex %></p>
+            <p class="card-text"><%= listing.description%></p>
+            <h5><%= number_to_currency(listing.price) %></h5>
+          </div>
+        <div class="card-footer">
+          <%= link_to 'View Details', listing_path(listing), class:"btn btn-outline-dark" %>
+        </div>
+        </div>
         <% end %>
-        <% end %>
-      </tr>
-      <%end%>
-      <%end%>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% if user_signed_in? %>
-    <%= link_to 'View My Listings', user_path %>
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <%= link_to 'Add New Listing', new_listing_path %>
-    <% else %>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <% end %>
-    </li>
-
-<br>
-
-<%= link_to 'View Active Listings', listings_path %>
-
-<%= link_to 'Home', root_path %>
-
-<% if current_user %>
-        <% if current_user.admin? %>
-        <td><%= link_to 'View Admin Page', admin_path %></td>
-         <td><%= link_to 'View Makes', makes_path %></td>
-         <td><%= link_to 'View Colours', colours_path%></td>
-         <td><%= link_to 'View Conditions', conditions_path%></td>
-         <td><%= link_to 'View Sizes', sizes_path%></td>
-        <% end %>
-        <% end %>
