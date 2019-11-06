@@ -1,5 +1,36 @@
 Home
 <li>
+<% @listings = Listing.all %>
+<% @listings.last(3).each do | listing | %>
+    <% if listing.sold == "active"%>
+
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.colour.colour %></td>
+        <td><%= listing.make.make %></td>
+        <td><%= listing.size.size %></td>
+        <td><%= listing.condition.condition %></td>
+        <td><%= listing.sex %></td>
+        <td><%= listing.location %></td>
+        <td><%= listing.price %></td>
+        <td><%= listing.deposit %></td>
+        <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
+
+
+
+
+        <td><%= link_to "View", listing_path( listing ) %></td>
+        <% if current_user %>
+        <% if current_user.admin? || current_user.id == listing.user_id %> 
+         <td><%= link_to 'Manage Listing', user_path %></td>
+         <% else %>
+         
+        <% end %>
+        <% end %>
+      </tr>
+      <%end%>
+      <%end%>
 
 <% if user_signed_in? %>
     <%= link_to 'View My Listings', user_path %>

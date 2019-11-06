@@ -9,15 +9,12 @@ class Ability
   
 
     if user.present?  # additional permissions for logged in users (they can crud their own posts)
-      can :crud, Listing, user_id: user.id
+      can :read, Listing
+      can :manage, Listing, user_id: user.id
+      
 
       if user.admin?  # additional permissions for administrators
-        can :crud, Listing
-        can :crud, User
-        can :crud, Make
-        can :crud, Condition
-        can :crud, Colour
-        can :crud, Size
+        can :manage, :all
       end
     end
     # Define abilities for the passed in user here. For example:

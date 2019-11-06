@@ -59,20 +59,39 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 - As a parent user, I want to find bikes easily so that my kids have the right sized bike as they grow.
 - As a parent user, I want my to be able to navigate the site easily.
 - As a parent user(seller), I want to confirm the successful sale of my bike by collecting a deposit.
-- As an admin user, I want to delete inappropriate listings that violate community rules.
+- As an admin user, I want to delete inappropriate listings that may be offensive.
 
 ## Wireframes
 
 ## ERD
 
 ## 	Explain the different high-level components (abstractions) in your app
+1. talk about active record - layer on top of SQL - transpiling
+Product.all becomes select * from "Products"
+2. Active Storage
+3. Form Helpers - form_for
 
 ## Detail any third party services that your app will use
+- Heroku
+- Amazon Web Services (AWS) S3
+- Stripe
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
+One user has many listings
+
 
 ## Discuss the database relations to be implemented in your application
+migrations
+foreign keys
+tables
+x table has a foreign key of y
 
 ## Provide your database schema design
 
+data types and why certain data types chosen - Enum because ...
+name = string
+screenshot of schema
+
 ## Describe the way tasks are allocated and tracked in your project
+Trello screenshots x 3 minimum
+

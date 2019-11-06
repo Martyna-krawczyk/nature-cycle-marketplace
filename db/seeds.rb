@@ -11,7 +11,7 @@ for i in 1..10
   user = User.new(
     :email => Faker::Internet.email,
     :password => '123456',
-    :file_id => rand(1..2)
+    :file_id => rand(1..2),
     :admin => false
   )
   user.save!(:validate => false)
@@ -21,8 +21,8 @@ end
 # Create 1 admin user
 admin_user = User.new(
     :email => Faker::Internet.email,
-    :password => '123456',
-    :file_id => rand(1..2)
+    :password => '01234567',
+    :file_id => rand(1..2),
     :admin => true
   )
   admin_user.save!(:validate => false)

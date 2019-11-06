@@ -5,11 +5,11 @@ class PagesController < ApplicationController
   end 
 
   def admin
-    
+    authorize! :admin, @listings
   end 
 
   def user
-    
+    # authorize! :user, @listings
   end 
   
 end
