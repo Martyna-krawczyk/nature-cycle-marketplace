@@ -23,7 +23,7 @@ This application has been developed to:
 
 ## Description
 ### Purpose
-The purpose of this application is to connect people with a bike to sell, to people looking to buy a second-hand bike - specifically, children's bikes.
+The purpose of this application is to connect people with a bike to sell, to people looking to buy a bike - specifically, second hand children's bikes.
 
 ### Functionality
 The application is accessible from any internet browser and is designed to be an easy-to-use application for even the non-tech-savviest of parents. 
@@ -55,6 +55,11 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 
 
 ## User Stories
+- As a parent user (seller), I want to sell my kids used bikes so they aren't lying around in my garage when my kids can no longer ride them.
+- As a parent user, I want to find bikes easily so that my kids have the right sized bike as they grow.
+- As a parent user, I want my to be able to navigate the site easily.
+- As a parent user(seller), I want to confirm the successful sale of my bike by collecting a deposit.
+- As an admin user, I want to delete inappropriate listings that violate community rules.
 
 ## Wireframes
 
