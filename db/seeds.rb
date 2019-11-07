@@ -26,7 +26,7 @@ admin_user = User.new(
     :admin => true
   )
   admin_user.save!(:validate => false)
-  Puts "Created one admin user"
+  Puts "Created one admin user #{:email} with password #{:password}"
 
 # Creates 20 colours for Colours table
 for i in 1..20

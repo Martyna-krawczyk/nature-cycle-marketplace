@@ -62,11 +62,20 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 - As an admin user, I want to delete inappropriate listings that may be offensive.
 
 ## Wireframes
+![Wireframe-Home](app/assets/images/mdimages/home_wireframe_mobile_desktop.png)
+![Wireframe-Admin User Dashboard](app/assets/images/mdimages/admin_user_dashboard_mobile_desktop_wireframe.png)
+![Wireframe-Login SignUp](app/assets/images/mdimages/login_signup_mobile_desktop_wireframe.png)
+![Wireframe-Sell Bike](app/assets/images/mdimages/sell_bike_mobile_desktop_wireframe.png)
+![Wireframe-Stripe Payment Page](app/assets/images/mdimages/stripe_payment_page_mobile_desktop_wireframe.png)
+![Wireframe-Success](app/assets/images/mdimages/success_mobile_desktop_wireframe.png)
+![Wireframe-View Listings](app/assets/images/mdimages/view_listings_mobile_desktop_wireframe.png)
 
 ## ERD
+![ERD](app/assets/images/mdimages/erd.jpg)
 
 ## 	Explain the different high-level components (abstractions) in your app
-1. talk about active record - layer on top of SQL - transpiling
+Active Record is the Model which is responsible for connecting the rich objects of an application, to the database tables without needing to type sql commands. It allows for there to be less database code and easy storage and retrieval from the database - this is referred to as Object Relational Mapping (ORM).
+
 Product.all becomes select * from "Products"
 2. Active Storage
 3. Form Helpers - form_for
@@ -93,5 +102,6 @@ name = string
 screenshot of schema
 
 ## Describe the way tasks are allocated and tracked in your project
-Trello screenshots x 3 minimum
-
+![Trello Screenshot 1](app/assets/images/mdimages/trello_screenshot_one.png)
+![Trello Screenshot 2](app/assets/images/mdimages/trello_screenshot_two.png)
+![Trello Screenshot 3](app/assets/images/mdimages/trello_tracking.png)
