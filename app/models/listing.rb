@@ -11,5 +11,9 @@ class Listing < ApplicationRecord
   validates :deposit,numericality: true 
   validates_numericality_of :deposit, :less_than_or_equal_to => :price
 
+  validates :title, presence: true, length: { minimum: 10 }
+
+  validates :description, presence: true, length: { minimum: 30 }
+
   has_one_attached :picture
 end

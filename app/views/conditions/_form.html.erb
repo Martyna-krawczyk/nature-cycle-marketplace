@@ -14,7 +14,7 @@
 
     <div>
         <%= form.label :condition %>
-        <%= form.text_field :condition, :required => true, :autofocus => true, :placeholder => "Which condition would you like to add?"%>
+        <%= form.text_field :condition, :required => true, :autofocus => true, :placeholder => "Which condition would you like to add?", :pattern => "[^0-9]*"%>
     </div>
     <div>
         <%= form.submit %>
