@@ -155,7 +155,8 @@ for i in 1..10
     :size_id => sample_size.sample.to_i,
     :sex => rand(0..2).to_i,
     :condition_id => sample_condition.sample.to_i,
-    :location => locations.sample
+    :location => locations.sample,
+    :sold => 2.to_i
   )
   listing.picture.attach(io: File.open(path), filename: image)
   listing.save
