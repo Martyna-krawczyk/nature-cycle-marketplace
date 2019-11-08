@@ -94,6 +94,8 @@ migrations
 foreign keys
 tables
 x table has a foreign key of y
+parent tables
+child tables - has foreign key
 
 ## Provide your database schema design
 

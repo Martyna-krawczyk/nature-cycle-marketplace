@@ -8,7 +8,9 @@ class Listing < ApplicationRecord
   enum sold: { sold: 1, active: 2 }
 
   validates :price, numericality: true
+
   validates :deposit,numericality: true 
+  
   validates_numericality_of :deposit, :less_than_or_equal_to => :price
 
   validates :title, presence: true, length: { minimum: 10 }

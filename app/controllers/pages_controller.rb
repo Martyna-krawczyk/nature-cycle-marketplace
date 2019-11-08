@@ -12,7 +12,6 @@ class PagesController < ApplicationController
     if !user_signed_in?
       redirect_to '/404.html'
     end
-    # authorize! :user, @listings
   end 
   
 end
