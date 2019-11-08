@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   
   def home
-    @recent = Listing.last(3)
+    Listing.all
+    @recent = Listing.where(sold: 2).last(3)
   end 
 
   def admin
