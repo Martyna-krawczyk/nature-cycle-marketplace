@@ -74,10 +74,10 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 ![ERD](app/assets/images/mdimages/erd.jpg)
 
 ## 	Explain the different high-level components (abstractions) in your app
-Active Record is the Model which is responsible for connecting the rich objects of an application, to the database tables without needing to type sql commands. It allows for there to be less database code and easy storage and retrieval from the database - this is referred to as Object Relational Mapping (ORM).
+1. Active Record is the Model which is responsible for connecting the rich objects of an application to the database tables without needing to type sql commands. It allows for there to be less database code and easy storage and retrieval from the database - this is referred to as Object Relational Mapping (ORM).  An example of this is the command 'Listing.all', which, when transpiled, becomes 'select * from Listings'.
 
-Product.all becomes select * from "Products"
-2. Active Storage
+
+2. Active Storage facilitates the uploading of files to amazon
 3. Form Helpers - form_for
 
 ## Detail any third party services that your app will use
