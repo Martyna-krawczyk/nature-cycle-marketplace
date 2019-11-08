@@ -40,8 +40,15 @@ The Application features include:
 - Administration dashboard for a single administrator to manage all listings (using CanCanCan plug-in)
 
 ### Sitemap
+![Sitemap](app/assets/images/mdimages/naturecyclesitemap.png)
 
 ### Screenshots
+![Home Page](app/assets/images/mdimages/home_page_screenshot.png)
+![View Listings](app/assets/images/mdimages/view_listings_screenshot.png)
+![New Listing](app/assets/images/mdimages/new_listing_screenshot.png)
+![Show Listing](app/assets/images/mdimages/show_listings_screenshot.png)
+![Admin Menu Navigation](app/assets/images/mdimages/admin_menu_navigation_screenshot.png)
+![Admin Manage Listings](app/assets/images/mdimages/admin_manage_listings_screenshot.png)
 
 ### Target Audience
 This app is designed for parents and young people who either have used bikes to sell, or who would like to purchase a used bike. 
@@ -74,13 +81,22 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 ![ERD](app/assets/images/mdimages/erd.jpg)
 
 ## 	Explain the different high-level components (abstractions) in your app
-1. Active Record is the Model which is responsible for connecting the rich objects of an application to the database tables without needing to type sql commands. It allows for there to be less database code and easy storage and retrieval from the database - this is referred to as Object Relational Mapping (ORM).  An example of this is the command 'Listing.all', which, when transpiled, becomes 'select * from Listings'.
+1. Active Record is the Model which is responsible for connecting the rich objects of an application to the database tables without needing to type sql commands. Associations between the models means that models can connect to each other, allowing for less database code and easy storage and retrieval from the database - this is referred to as Object Relational Mapping (ORM).  An example of this is the command 'Listing.all' which, when utilised in methods within a controller, is transpiled and becomes 'select * from Listings'.  
 
 
-2. Active Storage facilitates the uploading of files to amazon
-3. Form Helpers - form_for
+2. This application utilises Active Storage to facilitate the uploading of files to Amazon Web Services (AWS), a cloud based storage service which connects the attachments to an Active Record object.  On creation of the application, Active Storage creates two tables ```called active_storage_blobs``` and ```active_storage_attachments```(a polymorphic table which stores the model's class name).  In order to declare an active storage service, it was necessary to update the config/environments/production.rb amd development.rb files with the name of the service, as well as add the service credentials to the storage.yaml file.  Declaring the 'has_one_attached :image' in the Listing model was also required.
+```
+config.active_storage.service = :amazon
+```
+
+3. Model Object Helpers within the forms have made it possible to very easily pass
 
 ## Detail any third party services that your app will use
+- Gems
+  - Devise
+  - CanCanCan
+  - Faker
+  - Bootstrap
 - Heroku
 - Amazon Web Services (AWS) S3
 - Stripe
