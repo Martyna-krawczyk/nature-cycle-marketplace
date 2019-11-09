@@ -40,15 +40,15 @@ The Application features include:
 - Administration dashboard for a single administrator to manage all listings (using CanCanCan plug-in)
 
 ### Sitemap
-![Sitemap](app/assets/images/mdimages/naturecyclesitemap.png)
+![Sitemap](app/assets/images/docs/naturecyclesitemap.png)
 
 ### Screenshots
-![Home Page](app/assets/images/mdimages/home_page_screenshot.png)
-![View Listings](app/assets/images/mdimages/view_listings_screenshot.png)
-![New Listing](app/assets/images/mdimages/new_listing_screenshot.png)
-![Show Listing](app/assets/images/mdimages/show_listings_screenshot.png)
-![Admin Menu Navigation](app/assets/images/mdimages/admin_menu_navigation_screenshot.png)
-![Admin Manage Listings](app/assets/images/mdimages/admin_manage_listings_screenshot.png)
+![Home Page](app/assets/images/docs/home_page_screenshot.png)
+![View Listings](app/assets/images/docs/view_listings_screenshot.png)
+![New Listing](app/assets/images/docs/new_listing_screenshot.png)
+![Show Listing](app/assets/images/docs/show_listings_screenshot.png)
+![Admin Menu Navigation](app/assets/images/docs/admin_menu_navigation_screenshot.png)
+![Admin Manage Listings](app/assets/images/docs/admin_manage_listings_screenshot.png)
 
 ### Target Audience
 This app is designed for parents and young people who either have used bikes to sell, or who would like to purchase a used bike. 
@@ -70,16 +70,16 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 - As an admin user, I want to delete inappropriate listings that may be offensive.
 
 ## Wireframes
-![Wireframe-Home](app/assets/images/mdimages/home_wireframe_mobile_desktop.png)
-![Wireframe-Admin User Dashboard](app/assets/images/mdimages/admin_user_dashboard_mobile_desktop_wireframe.png)
-![Wireframe-Login SignUp](app/assets/images/mdimages/login_signup_mobile_desktop_wireframe.png)
-![Wireframe-Sell Bike](app/assets/images/mdimages/sell_bike_mobile_desktop_wireframe.png)
-![Wireframe-Stripe Payment Page](app/assets/images/mdimages/stripe_payment_page_mobile_desktop_wireframe.png)
-![Wireframe-Success](app/assets/images/mdimages/success_mobile_desktop_wireframe.png)
-![Wireframe-View Listings](app/assets/images/mdimages/view_listings_mobile_desktop_wireframe.png)
+![Wireframe-Home](app/assets/images/docs/home_wireframe_mobile_desktop.png)
+![Wireframe-Admin User Dashboard](app/assets/images/docs/admin_user_dashboard_mobile_desktop_wireframe.png)
+![Wireframe-Login SignUp](app/assets/images/docs/login_signup_mobile_desktop_wireframe.png)
+![Wireframe-Sell Bike](app/assets/images/docs/sell_bike_mobile_desktop_wireframe.png)
+![Wireframe-Stripe Payment Page](app/assets/images/docs/stripe_payment_page_mobile_desktop_wireframe.png)
+![Wireframe-Success](app/assets/images/docs/success_mobile_desktop_wireframe.png)
+![Wireframe-View Listings](app/assets/images/docs/view_listings_mobile_desktop_wireframe.png)
 
 ## ERD
-![ERD](app/assets/images/mdimages/erd.jpg)
+![ERD](app/assets/images/docs/erd.jpg)
 
 ## 	Explain the different high-level components (abstractions) in your app
 1. Active Record is the Model which is responsible for connecting the rich objects of an application to the database tables without needing to type sql commands. Associations between the models means that models can connect to each other, allowing for less database code and easy storage and retrieval from the database - this is referred to as Object Relational Mapping (ORM).  An example of this is the command 'Listing.all' which, when utilised in methods within a controller, is transpiled and becomes 'select * from Listings'.  
@@ -135,13 +135,12 @@ Strings are widely used in the database tables for attributes such as colour, co
   - sold - to track active and sold listings by updating the integer when the success method runs (after payment has been made).
 - Within the users table, a column called admin was added and set to a boolean in order to apply a true value against one admin user. This was a requirement of the CanCanCan gem.<br>
 A screenshot of the schema is below.
-![Schema Design Screenshot](app/assets/images/mdimages/schema_database_design.png)
+![Schema Design Screenshot](app/assets/images/docs/schema_database_design.png)
 
 ## Describe the way tasks are allocated and tracked in your project
 Throughout the course of the project, each task was tracked and managed using a trello board. It contained cards with due dates, checklists and attachments. The board can be accessed using this link:
 [Trello Board](https://trello.com/b/qaFtFFnD/rails-marketplace)
-![Trello Screenshot 1](app/assets/images/mdimages/trello_screenshot_one.png)
-![Trello Screenshot 2](app/assets/images/mdimages/trello_screenshot_two.png)
-![Trello Screenshot 3](app/assets/images/mdimages/trello_tracking.png)
-trello_screenshot_two.png)
-![Trello Screenshot 4](app/assets/images/mdimages/trello_screenshot_three.png)
+![Trello Screenshot 1](app/assets/images/docs/trello_screenshot_one.png)
+![Trello Screenshot 2](app/assets/images/docs/trello_screenshot_two.png)
+![Trello Screenshot 3](app/assets/images/docs/trello_tracking.png)
+![Trello Screenshot 4](app/assets/images/docs/trello_screenshot_three.png)
