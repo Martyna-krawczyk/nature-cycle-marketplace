@@ -58,6 +58,7 @@ This app is designed for parents and young people who either have used bikes to 
 - Ruby on Rails
 - SCSS
 - HTML
+<br>
 The app is deployed using Heroku, all images stores on AWS and Stripe payment gateway utilised.
 
 
@@ -94,28 +95,28 @@ config.active_storage.service = :amazon
 ## Detail any third party services that your app will use
 The application has been built with the help of the following ruby gems:
 - Gems
-  - Devise - handling user authentication, with the inclusion of user tables, form helpers, methods and routes
-  - CanCanCan - used in conjunction with Devise, this gem manages multiple user roles and access. This application has three kinds of users - visitor, logged-in user (user) and admin user - each with their own access and Create, Read, Destroy, Update (CRUD)permissions.
-  - Faker - used only in seeding user accounts and colours
-  - Bootstrap - implementation of the navigation bar and card-views for some basic styling across the site.
-- Deployment - The application was deployed using Heroku.
-
-- Image Storage - Amazon Web Services (AWS) S3 has been utilised to store and retrieve all attached listings images.
-- Payment Gateway - Stripe was selected to handle collection of the deposit at purchase.
+  - Devise - Developed by Platformatech, Devise handles user authentication, with the inclusion of user tables, form helpers, controllers, views, mailers, and routes. It is simple to use and it is highly customizable.
+  - CanCanCan - Developed by multiple contributors, CanCanCan is used in conjunction with Devise to manage multiple user roles and access using an authorisation library which restricts what resources a specific user is allowed to access. All permissions are defined in a single location (the Ability class) and not duplicated across controllers, views, and database queries. This application has three kinds of users - visitor, logged-in user (user) and admin user - each with their own access and Create, Read, Destroy, Update (CRUD) permissions.
+  - Faker - Faker is an open source library for generating fake data such as names, email addresses and other types of data. In order to test the workings of an application, having data in the database is very important, however adding this information manually is very time consuming, therefore, this gem is very helpful in setting up the seeds file. In tis application, Faker was used only in seeding user accounts and generating colours.
+  - Bootstrap - Bootstrap is a large collection of reuseable code written in HTML, CSS and Javascript, designed to enable designers to implement responsive websites quickly. Bootstrap was utilised in this application for implementation of the navigation bar and card-views for some basic styling across the site.
+<br>
+- Deployment - Heroku is a Platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.The application was deployed using Heroku using a free 'hobby' account. 
+<br>
+- Image Storage - Amazon Simple Storage Service (Amazon S3) is a secure  object storage service which stores any files in the cloud. Amazon S3 has been utilised to store and retrieve all attached listings images.
+<br>
+- Payment Gateway - Stripe is a cloud based payment solution which simplifies the collection of credit card payments on e-commerce and other websites. Stripe was selected to handle collection of the deposit at purchase within the application using their free testing API.
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
-One user has many listings
-One colour has many listings
-One make has many listings
-One condition has many listings
-One size has many listings
-Listing belongs to user
-Listing belongs to colour
-Listing belongs to make
-Listing belongs to condition
-Listing belongs to size
-
-
+One user has many listings<br>
+One colour has many listings<br>
+One make has many listings<br>
+One condition has many listings<br>
+One size has many listings<br>
+Listing belongs to user<br>
+Listing belongs to colour<br>
+Listing belongs to make<br>
+Listing belongs to condition<br>
+Listing belongs to size<br>
 
 ## Discuss the database relations to be implemented in your application
 The application has five parent tables, being:
@@ -123,7 +124,7 @@ The application has five parent tables, being:
 - Colours
 - Makes
 - Sizes
-- Conditions
+- Conditions<br>
 The Listings table is the child table in this database as it contains columns with foreign keys from the parent tables above.
 In order to have all of the required data for the implementation of the listings table, it was necessary to create the parent tables first before running a migration.
 
@@ -132,7 +133,7 @@ Strings are widely used in the database tables for attributes such as colour, co
 - Within the listings table, the below attributes were set to integer only in order to utilise them as enum.
   - sex (the gender suitability) - for use as a checkbox.
   - sold - to track active and sold listings by updating the integer when the success method runs (after payment has been made).
-- Within the users table, a column called admin was added and set to a boolean in order to apply a true value against one admin user.
+- Within the users table, a column called admin was added and set to a boolean in order to apply a true value against one admin user. This was a requirement of the CanCanCan gem.<br>
 A screenshot of the schema is below.
 ![Schema Design Screenshot](app/assets/images/mdimages/schema_database_design.png)
 
