@@ -118,21 +118,29 @@ Listing belongs to size
 
 
 ## Discuss the database relations to be implemented in your application
-migrations
-foreign keys
-tables
-x table has a foreign key of y
-parent tables
-child tables - has foreign key
+The application has five parent tables, being:
+- Users
+- Colours
+- Makes
+- Sizes
+- Conditions
+The Listings table is the child table in this database as it contains columns with foreign keys from the parent tables above.
+In order to have all of the required data for the implementation of the listings table, it was necessary to create the parent tables first before running a migration.
 
 ## Provide your database schema design
-
-data types and why certain data types chosen - Enum because ...
-name = string
-screenshot of schema
+Strings are widely used in the database tables for attributes such as colour, condition, make and size. 
+- Within the listings table, the below attributes were set to integer only in order to utilise them as enum.
+  - sex (the gender suitability) - for use as a checkbox.
+  - sold - to track active and sold listings by updating the integer when the success method runs (after payment has been made).
+- Within the users table, a column called admin was added and set to a boolean in order to apply a true value against one admin user.
+A screenshot of the schema is below.
 ![Schema Design Screenshot](app/assets/images/mdimages/schema_database_design.png)
 
 ## Describe the way tasks are allocated and tracked in your project
+Throughout the course of the project, each task was tracked and managed using a trello board. It contained cards with due dates, checklists and attachments. The board can be accessed using this link:
+[Trello Board](https://trello.com/b/qaFtFFnD/rails-marketplace)
 ![Trello Screenshot 1](app/assets/images/mdimages/trello_screenshot_one.png)
 ![Trello Screenshot 2](app/assets/images/mdimages/trello_screenshot_two.png)
 ![Trello Screenshot 3](app/assets/images/mdimages/trello_tracking.png)
+trello_screenshot_two.png)
+![Trello Screenshot 4](app/assets/images/mdimages/trello_screenshot_three.png)
