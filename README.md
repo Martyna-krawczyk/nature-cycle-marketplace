@@ -16,7 +16,7 @@ This application has been developed to:
 - reduce the incidence of discarded bikes in landfill.
 
 ## Accessing the Deployed App
-[title](https://www.example.com)
+[NatureCycle deployed using Heroku](https://sleepy-everglades-27880.herokuapp.com/)
 
 ## Accessing the GitHub repository
 [GitHub - NatureCycle repository](https://github.com/Martyna-krawczyk/nature-cycle-marketplace)
@@ -56,7 +56,7 @@ This app is designed for parents and young people who either have used bikes to 
 ### Tech stack
 - Ruby
 - Ruby on Rails
-- CSS
+- SCSS
 - HTML
 The app is deployed using Heroku, all images stores on AWS and Stripe payment gateway utilised.
 
@@ -89,20 +89,32 @@ The app is deployed using Heroku, all images stores on AWS and Stripe payment ga
 config.active_storage.service = :amazon
 ```
 
-3. Model Object Helpers within the forms have made it possible to very easily pass
+3. Model Object Helpers within the forms have made it possible to very easily pass information from the form to the database, with the added ease of accessing the submitted information via params. By calling the form_with :model helper, I was able to bind the form to the object, without having to repeat the name of the edited object many times.
 
 ## Detail any third party services that your app will use
+The application has been built with the help of the following ruby gems:
 - Gems
-  - Devise
-  - CanCanCan
-  - Faker
-  - Bootstrap
-- Heroku
-- Amazon Web Services (AWS) S3
-- Stripe
+  - Devise - handling user authentication, with the inclusion of user tables, form helpers, methods and routes
+  - CanCanCan - used in conjunction with Devise, this gem manages multiple user roles and access. This application has three kinds of users - visitor, logged-in user (user) and admin user - each with their own access and Create, Read, Destroy, Update (CRUD)permissions.
+  - Faker - used only in seeding user accounts and colours
+  - Bootstrap - implementation of the navigation bar and card-views for some basic styling across the site.
+- Deployment - The application was deployed using Heroku.
+
+- Image Storage - Amazon Web Services (AWS) S3 has been utilised to store and retrieve all attached listings images.
+- Payment Gateway - Stripe was selected to handle collection of the deposit at purchase.
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
 One user has many listings
+One colour has many listings
+One make has many listings
+One condition has many listings
+One size has many listings
+Listing belongs to user
+Listing belongs to colour
+Listing belongs to make
+Listing belongs to condition
+Listing belongs to size
+
 
 
 ## Discuss the database relations to be implemented in your application
@@ -118,6 +130,7 @@ child tables - has foreign key
 data types and why certain data types chosen - Enum because ...
 name = string
 screenshot of schema
+![Schema Design Screenshot](app/assets/images/mdimages/schema_database_design.png)
 
 ## Describe the way tasks are allocated and tracked in your project
 ![Trello Screenshot 1](app/assets/images/mdimages/trello_screenshot_one.png)
